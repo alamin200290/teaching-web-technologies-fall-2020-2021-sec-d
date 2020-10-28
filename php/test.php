@@ -1,0 +1,6 @@
+<?php
+
+
+	print "Hello PHP!";
+
+?>
