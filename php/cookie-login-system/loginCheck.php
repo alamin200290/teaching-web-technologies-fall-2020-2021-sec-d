@@ -15,7 +15,8 @@
 				//$_SESSION['flag'] = "true";
 				//$_SESSION['username'] = $username;
 
-				setcookie('flag', 'true', time()+3600, '/');
+				setcookie('flag', 'alamin', time()+3600, '/');
+				//setcookie('rm', 'ok', time()+3600, '/');
 				//setcookie('uname', 'alamin', time()+3600, '/');
 
 				header('location: home.php');
