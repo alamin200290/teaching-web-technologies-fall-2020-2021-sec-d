@@ -1,6 +1,5 @@
 <?php
 	//session_start();
-	require_once('../db/db.php');
 
 	if(isset($_REQUEST['submit'])){
 		$username = $_REQUEST['username'];
@@ -8,24 +7,24 @@
 
 		if(empty($username) || empty($password)){
 			//echo "null submission";
-			header('location: ../view/login.php?msg=null');
+			header('location: login.php?msg=null');
 		}else{
 
-			$conn = getConnection();
+			$conn = mysqli_connect('localhost', 'root', '', 'webtech');
+			//$sql = "select * from users where username='".$username."' and password='".$password."'";
+			//$sql = "select * from users where username='{$username}' and password='{$password}'";
 			$sql = "select * from users where username='$username' and password='$password'";
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_assoc($result);
 
 			if(count($row) > 0){
 				setcookie('flag', 'alamin', time()+3600, '/');
-				header('location: ../view/home.php');
+				header('location: home.php');
 			}else{
-				header('location: ../view/login.php?msg=invalid');
+				header('location: login.php?msg=invalid');
 			}
 		}
 	}else{
-		header('location: ../view/login.php');
+		header('location: login.php');
 	}
-	
-
 ?>
