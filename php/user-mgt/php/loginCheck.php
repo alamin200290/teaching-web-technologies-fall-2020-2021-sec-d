@@ -1,6 +1,6 @@
 <?php
 	//session_start();
-	require_once('../db/usersService.php');
+	require_once('../models/usersService.php');
 
 	if(isset($_REQUEST['submit'])){
 		$username = $_REQUEST['username'];

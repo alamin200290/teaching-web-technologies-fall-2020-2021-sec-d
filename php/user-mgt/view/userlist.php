@@ -1,6 +1,6 @@
 <?php
 	require_once('../php/header.php');
-	require_once('../db/usersService.php');
+	require_once('../models/usersService.php');
 
 	$userlist = getAllUsers();
 
