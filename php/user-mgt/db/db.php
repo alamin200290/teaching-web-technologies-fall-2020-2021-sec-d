@@ -1,7 +1,17 @@
 <?php
 
+	$servername = 'localhost';
+	$dbuser		= 'root';
+	$dbpass		= '';
+	$database	= 'webtech';
+
 	function getConnection(){
-		$conn = mysqli_connect('localhost', 'root', '', 'webtech');
+		global $servername;
+		global $dbuser;
+		global $dbpass;
+		global $database;
+
+		$conn = mysqli_connect($servername, $dbuser, $dbpass, $database);
 		return $conn;
 	}
 

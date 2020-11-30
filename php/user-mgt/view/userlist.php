@@ -1,10 +1,8 @@
 <?php
 	require_once('../php/header.php');
-	require_once('../db/db.php');
+	require_once('../db/usersService.php');
 
-	$conn = getConnection();
-	$sql = "select * from users";
-	$result = mysqli_query($conn, $sql);
+	$userlist = getAllUsers();
 
 ?>
 

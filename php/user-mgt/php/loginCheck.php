@@ -1,6 +1,6 @@
 <?php
 	//session_start();
-	require_once('../db/db.php');
+	require_once('../db/usersService.php');
 
 	if(isset($_REQUEST['submit'])){
 		$username = $_REQUEST['username'];
@@ -11,13 +11,15 @@
 			header('location: ../view/login.php?msg=null');
 		}else{
 
-			$conn = getConnection();
-			$sql = "select * from users where username='$username' and password='$password'";
-			$result = mysqli_query($conn, $sql);
-			$row = mysqli_fetch_assoc($result);
+			$user = [
+				'username'=> $username,
+				'password'=> $password
+			];
 
-			if(count($row) > 0){
-				setcookie('flag', 'alamin', time()+3600, '/');
+			$status = validate($user);
+
+			if($status){
+				setcookie('flag', $username, time()+3600, '/');
 				header('location: ../view/home.php');
 			}else{
 				header('location: ../view/login.php?msg=invalid');
