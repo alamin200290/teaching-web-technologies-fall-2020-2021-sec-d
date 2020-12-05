@@ -1,0 +1,35 @@
+div{
+	border: 1px solid red; 
+	width: 100px;
+	height: 100px;
+	background-color: green;
+}
+
+#d1{
+	color: green;
+	border: 1px solid red; 
+	width: 100px;
+	height: 100px;
+	background-color: #e65520;
+	/*margin-top: 30px;
+	margin-left: 30px;*/
+	border: 2px solid green;
+}
+
+#d2{
+	border: 1px solid red; 
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+
+.c1{
+	border: 1px solid red; 
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+}
+
+.c2 {
+	color: green;
+}
