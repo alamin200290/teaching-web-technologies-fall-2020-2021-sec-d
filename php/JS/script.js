@@ -1,12 +1,23 @@
 "use strict"
 
-//a = 10;
-///var b =30;
-let c = 20;
-//const d =50;
 
-for (var i = 0; i < 1; i++) {
-	console.log(c);
+//alert('test');
+//console.log('testing...');
+
+//document.write('this is JS example');
+
+//document.getElementById('head').innerHTML = 'this is js example';
+//obj.innerHTML = "test";
+
+
+let student = ['alamin', '123', 'CS'];
+
+function f1(){
+	let data= document.getElementById('name').value;
+	if(data == ''){
+		document.getElementById('head').innerHTML = 'invalid data';		
+	}else{
+		document.getElementById('head').innerHTML = data;
+	}
+
 }
-
-// alert('test');
