@@ -1,9 +1,10 @@
 <?php
 	
-	$name = $_POST['name'];
+	$data = $_REQUEST['mydata'];
+	$json = json_decode($data);
 	//sleep(3);
 
-	$content = "
+	/*$content = "
 				<table border=1>
 					<tr>
 						<td>Name </td>
@@ -13,8 +14,9 @@
 						<td>{$name}</td>
 						<td>0</td>
 					</tr>
-				</table>";
+				</table>";*/
 
-	echo $content;
-	echo "test";
+	//$studnet = ['name'=>'alamin', 'dept'=>'CS', 'type'=>'Student'];
+
+	echo $json->dept;
 ?>

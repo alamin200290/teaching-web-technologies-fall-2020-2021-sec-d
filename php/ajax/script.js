@@ -1,7 +1,16 @@
 "use strict"
 
 function ajax(){
-	let data= document.getElementById('name').value;
+
+	var json = {
+		'name' : 'alamin',
+		'age'  : 13,
+		'dept' : 'CS'
+	}
+
+	var data = JSON.stringify(json);
+
+	//let data= document.getElementById('name').value;
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.open('POST', 'abc.php', true);
@@ -10,9 +19,11 @@ function ajax(){
 	xhttp.onreadystatechange = function(){
 		
 		if (this.readyState == 4 && this.status == 200) {
-	    	document.getElementById('result').innerHTML = this.responseText;
+	    	//var  xyz = JSON.parse(this.responseText);
+	    	//alert(xyz.deptdata);
+	    	alert(this.responseText);
 	    }
 	}
 	
-	xhttp.send('name='+data);
+	xhttp.send('mydata='+data);
 }
